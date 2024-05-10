@@ -91,6 +91,7 @@ nav ul li a:hover {
   transition: 0.5s;
   background-color: #df2771;
   color: #fff;
+  visibility: hidden;
 }
 .get-started:hover {
   color: #2e2e2e;

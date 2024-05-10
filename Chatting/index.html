@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Chat</title>
-    
-    <link rel="shortcut icon" type="png" href="images/icon/favicon.png">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>My Chat</title>
+
+	<link rel="shortcut icon" type="png" href="images/icon/favicon.png">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Comaptible" content="IE=edge">
 	<title>LearnEd</title>
@@ -30,7 +30,7 @@
 	<!-- Navigation Bar -->
 	<header id="header">
 		<nav>
-			<div class="logo"><img src="images/icon/logo.png" alt="logo"></div>
+			<div class="logo"><a href="#"><img src="images/icon/logo.png" alt="logo"></a></div>
 			<ul>
 				<li><a class="active" href="">Home</a></li>
 				<!-- <li><a href="#portfolio_section">Portfolio</a></li> -->
@@ -50,8 +50,8 @@
 					beliefs, and habits. Educational methods include teaching, training, storytelling, discussion and
 					directed research!</h5>
 				<div class="play">
-					<img src="images/icon/play.png" alt="play"><span><a
-							href="https://www.youtube.com/watch?v=KFyrgDO1WXk" target="_blank">Watch Now</a></span>
+					<img src="images/icon/play.png" alt="play"><span><a href="#popular">Get
+							Started</a></span>
 				</div>
 			</div>
 			<div class="svg-image">
@@ -60,10 +60,7 @@
 		</div>
 		<div class="side-menu" id="side-menu">
 			<div class="close" onclick="sideMenu(1)"><img src="images/icon/close.png" alt=""></div>
-			<div class="user">
-				<img src="images/creator/roshan.jpeg" alt="Username">
-				<p>roshank9419</p>
-			</div>
+
 			<ul>
 				<li><a href="#about_section">About</a></li>
 
@@ -77,7 +74,7 @@
 
 
 	<!-- Some Popular Subjects -->
-	<div class="title">
+	<div class="title" id="popular">
 		<span>Popular Courses on LearnEd</span>
 	</div>
 	<br><br>
@@ -184,10 +181,12 @@
 				<center>
 					<div class="card-title">Badmus Qudus Ayomide</div>
 					<div id="detail">
+						<h5>Osun State University</h5>
+						<h5>CEO</h5>
 						<p>“ You can teach a student a lesson for a day; but if you can teach him to learn by creating
 							curiosity, he will continue the learning process as long as he lives “</p>
 						<div class="duty"></div>
-						<a href="https://www.linkedin.com/in/roshan-kumar-a18b76179/" target="_blank"><button
+						<a href="https://www.linkedin.com/in/badmusqudusayomide/" target="_blank"><button
 								class="btn-roshan">Follow +</button></a>
 					</div>
 				</center>
@@ -197,10 +196,12 @@
 				<center>
 					<div class="card-title">Samuel Oluwabiyi</div>
 					<div id="detail">
+						<h5>Osun State University</h5>
+						<h5>CO-FOUNDER</h5>
 						<p>“ Real education should consist of drawing the goodness and the best out of our own students.
 							What better books can there be than the book of humanity “</p>
 						<div class="duty"></div>
-						<a href="https://www.linkedin.com/in/roshan-kumar-a18b76179/" target="_blank"><button
+						<a href="https://www.linkedin.com/in/oluwabiyisamuel/" target="_blank"><button
 								class="btn-akhil">Follow +</button></a>
 					</div>
 				</center>
@@ -445,50 +446,50 @@
 
 </html>
 <script>
-// var inner_pannel = document.getElementById("inner_left_pannel");
-function _(element) {
-    return document.getElementById(element);
-}
-// var inner_pannel = _("inner_left_pannel");
-// inner_pannel.innerHTML = "This is some data";
+	// var inner_pannel = document.getElementById("inner_left_pannel");
+	function _(element) {
+		return document.getElementById(element);
+	}
+	// var inner_pannel = _("inner_left_pannel");
+	// inner_pannel.innerHTML = "This is some data";
 
-// function read_data(){
-//     var inner_pannel = _("inner_left_pannel");
+	// function read_data(){
+	//     var inner_pannel = _("inner_left_pannel");
 
-// }
-function get_data(find,type){
-    var xml = new XMLHttpRequest();
+	// }
+	function get_data(find, type) {
+		var xml = new XMLHttpRequest();
 
-    xml.onload = function(){
-        if (xml.readyState == 4 || xml.status == 200) {
-            handle_result(xml.responseText,type);
-        }
+		xml.onload = function () {
+			if (xml.readyState == 4 || xml.status == 200) {
+				handle_result(xml.responseText, type);
+			}
 
-    }
-    var data = {};
-    data.find = find;
-    data.data_type = type;
-    data = JSON.stringify(data);
+		}
+		var data = {};
+		data.find = find;
+		data.data_type = type;
+		data = JSON.stringify(data);
 
 
 
-    xml.open("POST","api.php", true);
-    xml.send(data);
-}
+		xml.open("POST", "api.php", true);
+		xml.send(data);
+	}
 
-function handle_result(result,type){
+	function handle_result(result, type) {
 
-    if (result.trim() != "") {
+		if (result.trim() != "") {
 
-         var obj = JSON.parse(result);
-    if (!obj.logged_in) {
-        window.location =  "login.php";
-    }else{
-        alert(result);
-    }  
+			var obj = JSON.parse(result);
+			if (!obj.logged_in) {
+				window.location = "login.php";
+			} else {
+				alert(result);
+			}
 
-    }
-   
-}
-get_data({},"user_info");
-</script> 
+		}
+
+	}
+	get_data({}, "user_info");
+</script>

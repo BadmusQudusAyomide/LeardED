@@ -44,7 +44,7 @@ function switchTAB() {
 
 // For LOGIN
 var x = document.getElementById("myforml");
-var y = document.getElementsById("myform");
+var y = document.getElementById("myform");
 var z = document.getElementById("btn");
 var a = document.getElementById("log");
 var b = document.getElementById("reg");
@@ -71,10 +71,10 @@ function login() {
 // CheckBox Function
 function goFurther() {
   if (document.getElementById("chkAgree").checked == true) {
-    document.getElementById("btnSubmit").style =
+    document.getElementById("signup_button").style =
       "background: linear-gradient(to right, #FA4B37, #DF2771);";
   } else {
-    document.getElementById("btnSubmit").style = "background: lightgray;";
+    document.getElementById("signup_button").style = "background: lightgray;";
   }
 }
 

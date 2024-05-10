@@ -69,6 +69,17 @@
 					<img src="images/icon/google.png"><span>Sign in with Google</span>
 				</button>
 			</div>
+
+            <form id="myform" class="input-group">
+				<input type="text" class="input-field" name="username" placeholder="Full Name" required="required">
+				<input type="email" class="input-field"name="email" placeholder="Email Address" required="required">
+				<input type="password" class="input-field" placeholder="Create Password" name="password" required="required">
+				<input type="password" class="input-field" placeholder="Confirm Password" name="password2" required="required">
+				<input type="checkbox" class="check-box" id="chkAgree" onclick="goFurther()">I agree to the Terms & Conditions
+				<input type="button" id="signup_button" value="Register" class="submit-btn reg-btn">
+			</form>
+
+
 			
 		</div>
 		<script type="text/javascript" src="script.js"></script>
